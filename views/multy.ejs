@@ -1,0 +1,88 @@
+<%- include('parties/header') %>
+<div id="initial" >
+   <h2>Create Game to start👇</h2>
+   <button class="btn1" onclick="createGame()" >Create Game</button>
+   <h2>OR</h2>
+   <div>
+   <input type="text" value="<%= locals.roomcode %>" id="roomUniqueId" placeholder="Room code">
+   <button class="btn2" onclick="joinGame()" >Join Game</button>
+   </div>
+</div>
+   <div id="waitingArea"></div>
+
+<div id="Playboard" class="gameArea">
+    <img class="playcard" src="/assets/playboard.jpg" alt="">
+<div class="Hands">
+    <div id="leftHand">
+      <div>
+         <div class="Player1">
+             <h1 class="P1" >Player 1</h1> 
+            <h1>
+              <span class="fa fa-star Player1Star"></span>
+              <span class="fa fa-star Player1Star"></span>
+              <span class="fa fa-star Player1Star"></span>
+            </h1>
+         </div>
+   </div>
+        <img id="Lhand" class="hand" src="/assets/Lrock.png" alt="">
+    </div> 
+
+    <div id="rightHand" >
+      <div>
+         <div class="Player2" > 
+            <h1 class="P2">Player 2</h1> 
+            <h1>
+              <span class="fa fa-star Player2Star"></span>
+              <span class="fa fa-star Player2Star"></span>
+              <span class="fa fa-star Player2Star"></span>
+            </h1>
+          </div>    
+      </div>  
+    <img id="Rhand" class="hand" src="/assets/Rrock.png" alt="">
+   </div>
+</div>
+<p class="guide" >Select Your Gesture</p>
+   <div id="handButtonSection">
+      <button id="rock" onclick="sendChoice('rock')" class="handButton" ><img src="/assets/Lrock.png" alt=""></button>
+     <button id="paper" onclick="sendChoice('paper')" class="handButton" ><img src="/assets/Lpaper.png" alt=""></button>
+     <button id="scissor" onclick="sendChoice('scissor')" class="handButton" ><img src="/assets/Lscissor.png" alt=""></button>
+   </div>
+</div>
+<div id="namearea">
+   <input id="playerName" type="text" placeholder="Change Your Name" >
+   <button class="btn1" onclick="namePlayer()" >Submit</button>
+   </div>
+</div>
+</div>
+<hr/>
+
+<!-- GAMWOVER -->
+<div id="gameover">
+   <h2>GameOver</h2>
+   <div id="scorecard">
+     <div id="playerOne">
+        <h3 class="P1" >Player 1</h3>
+        <span class="fa fa-star L1Star"></span>
+        <span class="fa fa-star L1Star"></span>
+        <span class="fa fa-star L1Star"></span>
+     </div>
+     <div id="playerTwo">
+      <h3 class="P2" >Player 2</h3>
+      <span class="fa fa-star L2Star"></span>
+      <span class="fa fa-star L2Star"></span>
+      <span class="fa fa-star L2Star"></span>
+   </div>
+   </div>
+   <button class="btn2" onclick="restartGame()">Play Again!</button>
+   <button class="btn1" onclick="window.location.href='/'">Home</button>
+</div>
+
+<script src="/socket.io/socket.io.js"></script>
+
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="/index.js"></script>
+<footer><p>Copyright@ TechGrower</p></footer>
+
+
+</html>

@@ -1,0 +1,75 @@
+<%- include('parties/header') %>
+
+<div id="Playboard" class="gameArea">
+    <img class="playcard" src="/assets/playboard.jpg" alt="">
+    <div class="Hands">
+      <div id="leftHand">
+        <div>
+           <div class="Player1">
+               <h1 class="P1" >You</h1> 
+              <h1>
+                <span class="fa fa-star Player1Star"></span>
+                <span class="fa fa-star Player1Star"></span>
+                <span class="fa fa-star Player1Star"></span>
+              </h1>
+           </div>
+     </div>
+          <img id="Lhand" class="hand" src="/assets/Lrock.png" alt="">
+      </div> 
+  
+      <div id="rightHand" >
+        <div>
+           <div class="Player2" > 
+              <h1 class="P2">PC</h1> 
+              <h1>
+                <span class="fa fa-star Player2Star"></span>
+                <span class="fa fa-star Player2Star"></span>
+                <span class="fa fa-star Player2Star"></span>
+              </h1>
+            </div>    
+        </div>  
+      <img id="Rhand" class="hand" src="/assets/Rrock.png" alt="">
+     </div>
+  </div>
+<p class="guide" >Select Your Gesture</p>
+
+      <div id="handButtonSection">
+         <button id="rock" class="handButton" onclick="playerChoice('rock')"  ><img src="/assets/Lrock.png" alt=""></button>
+         <button id="paper" class="handButton" onclick="playerChoice('paper')" ><img src="/assets/Lpaper.png" alt=""></button>
+        <button id="scissor" class="handButton" onclick="playerChoice('scissor')" ><img src="/assets/Lscissor.png" alt=""></button>
+     </div>
+</div>
+
+
+
+<!-- GAMWOVER -->
+<div id="gameover">
+   <h2>GameOver</h2>
+   <div id="scorecard">
+     <div id="playerOne">
+        <h3 class="P1" >You</h3>
+        <span class="fa fa-star L1Star"></span>
+        <span class="fa fa-star L1Star"></span>
+        <span class="fa fa-star L1Star"></span>
+     </div>
+     <div id="playerTwo">
+      <h3 class="P2" >PC</h3>
+      <span class="fa fa-star L2Star"></span>
+      <span class="fa fa-star L2Star"></span>
+      <span class="fa fa-star L2Star"></span>
+   </div>
+   </div>
+<button class="btn1" onclick="restartGame()" >Play Again!</button>
+<button class="btn2" onclick="window.location.href='/'" >Home</button>
+</div>
+<div id="namearea">
+   <input id="playerName" type="text" placeholder="Change Your Name" >
+   <button class="btn1" onclick="setName()" >Submit</button>
+   </div>
+
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="/PlaywithPc.js"></script>
+
+<footer><p>Copyright@ TechGrower</p></footer>
+</html>

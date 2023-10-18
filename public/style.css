@@ -1,0 +1,272 @@
+body{
+ padding: 0px 0px;
+ margin: 0px 0px;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+color: #222;
+font-family: 'Sriracha', cursive;
+}
+
+h1, h2, h3{
+    padding: 0px 0px;
+    margin:  0px 0px;
+}
+h1{
+    font-size: clamp(16px, 4vw, 35px);
+}
+
+#Homepage{
+    margin-top: 30px;
+    width: 80%;
+    max-width: 1000px;
+    background-color: #fdfcff60;
+    border-radius: 10px;
+    border: 3px solid;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+}
+#Homepage>div{
+    width: 100%;
+}
+.hometxt{
+    text-align: center;
+}
+.homebtn{
+    margin: 40px 0px;
+    z-index: 2;
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+}
+.Homehand1{
+    z-index: 1;
+    rotate: 20deg;
+    height: clamp(200px, 40vw, 300px);
+    margin-left: -20px;
+    margin-top: -70px;
+    animation-name: wave-animation;  /* Refers to the name of your @keyframes element below */
+  animation-duration: 50s;        /* Change to speed up or slow down */
+  animation-iteration-count: infinite;  /* Never stop waving :) */ 
+  transform-origin: left;
+  -webkit-filter: drop-shadow(5px 5px 5px #222);
+  filter: drop-shadow(5px 5px 5px #222);
+}
+.Homehand2{
+    z-index: 1;
+    rotate: 30deg;
+    float: right;
+    margin-right: -20px;
+    margin-bottom: -30px;
+    height: clamp(200px, 40vw, 300px);
+    animation-name: wave-animation;  /* Refers to the name of your @keyframes element below */
+  animation-duration: 50s;        /* Change to speed up or slow down */
+  animation-iteration-count: infinite;  /* Never stop waving :) */ 
+  transform-origin: right;
+  -webkit-filter: drop-shadow(5px 5px 5px #222);
+  filter: drop-shadow(5px 5px 5px #222);
+  
+}
+
+#background{
+    width: 100%;
+    position: fixed ;
+    z-index: -1;
+}
+#initial{
+    margin-top: 18%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    background-color: #ffffffc6;
+    padding: 20px 20px;
+    border-radius: 10px;
+    border: 3px solid #222;
+}
+
+#waitingarea{
+    background-color: #ffffffc2;
+    padding: 20px 20px;
+    border-radius: 10px;
+    border: 3px solid #222;   
+}
+
+#waitingArea{
+    margin-top: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+#Playboard{
+    position: relative;
+    width: 80%;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-top: 40px;
+    display: none;
+    padding-bottom: 15px;
+    border:3px solid #fdfcff;
+}
+.Hands{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.playcard{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+
+}
+.Player1{
+  float: left;
+  margin-left: 10px;
+
+}
+.Player2{
+   margin-right: 10px;
+   float: right;
+
+}
+.P1 ,.P2{
+    font-size: 20px;
+}
+
+#Lhand{
+    transform-origin: left;
+    margin-left: -10px;
+}
+
+#Rhand{
+    transform-origin: right;
+    margin-right: -10px;
+}
+.hand{  
+    height: clamp(80px, 30vw, 400px);
+    animation-duration: 2.5s;
+    animation-iteration-count: infinite;
+
+}
+.guide{
+    margin-top: -25px;
+    font-size: clamp(12px, 3vw, 30px);
+    text-align: center;
+    animation-name: pop-animation;  /* Refers to the name of your @keyframes element below */
+    animation-duration: 3s;        /* Change to speed up or slow down */
+    animation-iteration-count: infinite;
+}
+
+#gameover{
+    position:absolute;
+    top: 20%;
+    background-color: whitesmoke;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 50px 50px;
+    width: 30%;
+    display:none;
+    z-index: 1;
+}
+#handButtonSection{
+    text-align: center;
+    gap: 20px;
+    justify-content: center;
+    display: flex;
+}
+
+.handButton{
+    background-color: transparent;
+}
+
+.handButton > img{
+    height: clamp(25px,7vw, 50px);
+    -webkit-filter: drop-shadow(2px 2px 2px #222);
+  filter: drop-shadow(2px 2px 2px #222);
+    
+}
+
+.handButton > img:hover{
+    -webkit-filter: drop-shadow(5px 5px 5px #222);
+  filter: drop-shadow(5px 5px 5px #222);
+  transform: scale(1.2);
+    
+}
+    
+#namearea{
+    margin-top: 10px;
+    display: none;
+}
+
+
+@media(max-width: 1237px) {
+#background{
+    height: 100vh;
+    width: auto;
+}
+ 
+}
+
+#handButtonSection>button{
+    border: none;
+    outline: none;
+}
+input{
+    border-radius: 10px;
+    padding-left: 5px;
+    border: 1px solid black;
+    height: 22px;
+}
+
+button{
+    -webkit-filter: drop-shadow(2px 2px 2px #222);
+    filter: drop-shadow(2px 2px 2px #222);  
+}
+
+.btn1{
+font-family: 'Sriracha', cursive;
+background-color: #cf5b96;
+color: white;
+border-radius: 10px;
+transition: all 0.5s ease-in;
+
+}
+
+.btn2{
+font-family: 'Sriracha', cursive;
+background-color: #723d8f;
+color: #fdfcff;
+transition: all 0.5s ease-in;
+border-radius: 10px;
+    
+}
+
+.btn1:hover{
+    background-color: #0d0e4e;
+    color: white;
+}
+.btn2:hover{
+    background-color: #0d0e4e;
+}
+
+@keyframes wave-animation {
+    0% { transform: rotate( 0.0deg) }
+   10% { transform: rotate(8.0deg) }  /* The following five values can be played with to make the waving more or less extreme */
+   20% { transform: rotate(-6.0deg) }
+   30% { transform: rotate(8.0deg) }
+   40% { transform: rotate(-2.0deg) }
+   50% { transform: rotate(8.0deg) }
+   60% { transform: rotate( 0.0deg) }  /* Reset for the last half to pause */
+  100% { transform: rotate( 0.0deg) }
+}
+@keyframes pop-animation{
+    0%{transform: scale(1);}
+    50%{transform: scale(1.1);}
+    100%{transform: scale(1);}
+}
